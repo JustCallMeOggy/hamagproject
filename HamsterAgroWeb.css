@@ -1,0 +1,310 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "Poppins", sans-serif;
+  --color1: #fff;
+  --color2: #111;
+} 
+
+header h1 {
+  font-family: 'Josefin Sans', serif;
+}
+
+
+h2 {
+  font-size: 2em;
+  margin: 1em;
+  color: #555; /* Сірий колір */
+  text-align: left;
+  margin-left: 30px; /* Зсув праворуч */
+}
+
+
+
+
+
+/*h2, h3 {
+  font-family: 'Didact Gothic', serif;
+  color: ;
+}/
+*
+/* Стилі для header */
+
+
+header h1 {
+  font-size: 2em;
+}
+body{
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #ffffd3;
+  background-color: #fafafa;
+}
+.nav-bar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  background-color: var(--color2);
+  padding: 12px 20px;
+}
+
+.logo img{width: 120px;
+  object-fit: cover;
+  border-radius: 5%;
+  transition: transform 0.3s ease;
+}
+.menu {display: flex;}
+.menu li {padding-left: 30px;}
+.menu li a{
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color1);
+  text-align: center;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  text-transform: uppercase;
+}
+.menu li a::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color:var(--color1);
+  transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after{width: 100%;}
+.open-menu, .close-menu{
+  position: absolute;
+  color: var(--color1);
+  cursor: pointer;
+  font-size:1.5rem ;
+  display: none;
+}
+.open-menu {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.close-menu {
+  top: 20px;
+  right: 20px;
+}
+#check {display: none;}
+/*Telephone*/
+@media(max-width: 610px){
+  .menu{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    background-color: var(--color2);
+    transition: all 0.2s ease-in-out;
+  }
+  .menu li {margin-top: 40px;}
+  .menu li a{padding: 10px;} 
+  .open-menu, .close-menu {display: block;}
+  #check:checked ~ .menu {right: 0;} 
+
+}
+
+
+@media (max-width: 768px){
+  body {
+    font-size: 0.9em;
+  }
+  header h1{
+    font-size: 1.8em;
+  }
+  header p {
+    font-size: 1em;
+  }
+  #contact ul li a{
+    font-size: 1em;
+  }
+}
+/* Основний шрифт для тексту */
+body {
+  font-family: 'Didact Gothic';
+  line-height: 1.6;
+  color: #333;
+  background-color:#fafafa;
+}
+/*body 
+  font-family: 'Roboto',sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;*/
+
+/* Шрифт для заголовків */
+h1, h2, h3 {
+  font-family: 'Didact Gothic', serif;
+}
+
+/* Заголовки секцій */
+h2{
+  font-size: 2em;
+  margin: 1.em;
+  color: #333;
+}
+/* Параграфи та списки */
+p, ul {
+  margin: 1em 0;
+}
+/* Плавний перехід для заголовків та кнопок */
+h2, button{
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+h3, button{
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+/* Збільшення елементів при наведенні */
+h2:hover{
+  color: #007bff;/* Зміна кольору на синій */
+  transform: scale(1.05);
+}
+h3:hover{
+  color: #007bff;/* Зміна кольору на синій */
+  transform: scale(1.05);
+}
+img:hover{
+  transform: scale(1.05);
+}
+
+/*.roboto-slab-title {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}*/
+.didact-gothic-regular {
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/*
+.image-container img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.image-container img{
+  transition: transform 0.3s ease;
+}
+.image-container img:hover{
+  transform: scale(1.1);
+}*/
+.image-gallery{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.image-container {
+  position: relative;
+  width: 350px; /* або інший бажаний розмір */
+  height: 350px;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5%;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Напівпрозорий чорний фон */
+  color: #fff;
+  opacity: 0; /* Початкова прозорість */
+  transition: opacity 0.3s ease;
+  border-radius: 5%;
+  text-align: center;
+  padding: 20px;
+}
+
+.image-container:hover .overlay {
+  opacity: 1; /* Відображення при наведенні */
+}
+ul {
+  list-style-type:none ;/* Відключити стандартні маркери списку */
+  padding: 0;/* Відсутність відступу */
+}
+ul li {
+  display: inline;/* Розташувати елементи горизонтально */
+  margin-right: 10px;/* Відстань між іконками */
+}
+ul li a {
+text-decoration: none;/* Відключити підкреслення для посилань */
+color: #333;/* Колір тексту */
+font-size: 18px;/* Розмір тексту */
+}
+ul li a i {
+  margin-right: 5px;/* Відстань між іконкою і текстом */
+} 
+#about {
+  background-color: #f2f2f2; /* Світло-сірий фон */
+  padding: 5px;
+  border-radius: 20px; /* Закруглені кути */
+  margin: 5px 0;
+  opacity: 0.95; /* Трохи прозорий */
+  margin-left: 0px; /* Зсув праворуч */
+}
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #000;
+}
+/* Центрування заголовка "Контакти" */
+#contact h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin: 20px 0;
+}
+
+/* Центрування тексту та списку іконок */
+#contact p {
+  text-align: center;
+}
+#contact ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+  color: #000;
+}
+
+#contact ul li a {
+  color: #000; /* Чорний текст у футері */
+  font-size: 18px;
+  text-decoration: none;
+}
